@@ -11,12 +11,12 @@ const app = express();
 const upload = multer({ dest: "uploads/" });
 
 const MODEL_NAME = "gemini-pro-vision";
-const API_KEY = "AIzaSyAhuq2aDi3L5yxi_nigK0FwFxS6bbrMTG8"; // Replace with your API Key
+const API_KEY = "AIzaSyAhuq2aDi3L5yxi_nigK0FwFxS6bbrMTG8"; 
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
-app.use(express.static("public")); // Serve static files in the 'public' directory
+app.use(express.static("public")); 
 
 app.post("/upload", upload.single("image"), async (req, res) => {
   try {
